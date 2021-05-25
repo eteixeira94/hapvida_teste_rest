@@ -1,10 +1,10 @@
-package br.com.idevelopers.hapvida_teste_rest;
+package br.com.isoftware.hapvida;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class HapvidaTesteRestApplicationTests {
+class HapvidaRestApplicationTests {
 
 	@Test
 	void contextLoads() {
