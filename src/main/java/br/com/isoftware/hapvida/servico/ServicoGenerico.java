@@ -76,9 +76,4 @@ public abstract class ServicoGenerico<K, E extends EntidadeGenerica<K>, T extend
 
         return pagina;
     }
-
-    @Transactional(readOnly = true, isolation = Isolation.SERIALIZABLE)
-    public List<E> todos() {
-        return this.getRepositorio().findAll();
-    }
 }

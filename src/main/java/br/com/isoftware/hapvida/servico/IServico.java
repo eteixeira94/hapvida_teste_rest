@@ -52,8 +52,6 @@ public interface IServico<K, E extends EntidadeGenerica<K>, T extends JpaReposit
     public default void posFiltrar(Page<E> pagina) {
     }
 
-    public List<E> todos();
-
     public default Example<E> criarFiltroBasico(E e) {
         return Example.of(e, ExampleMatcher.matchingAll().withIgnoreCase().withStringMatcher(StringMatcher.CONTAINING));
     }
