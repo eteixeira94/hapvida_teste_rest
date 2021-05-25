@@ -1,10 +1,11 @@
-# hapvida_teste_rest
+# Hapvida Rest
+
 Projeto Teste para o Hapvida
 
 Requisitos:
-    JDK 8
-    Mysql
-    Maven 3.6.3
+    - JDK 8
+    - Mysql
+    - Maven 3.6.3
 
 Plataforma de Desenvolvimento:
     VS Code 1.56.2
