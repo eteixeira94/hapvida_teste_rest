@@ -9,5 +9,4 @@ public class HapvidaRestApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(HapvidaRestApplication.class, args);
 	}
-
 }
