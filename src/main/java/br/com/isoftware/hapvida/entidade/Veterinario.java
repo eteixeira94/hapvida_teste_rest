@@ -1,6 +1,5 @@
 package br.com.isoftware.hapvida.entidade;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
