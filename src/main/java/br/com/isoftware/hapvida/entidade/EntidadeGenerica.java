@@ -8,7 +8,6 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.Version;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -25,7 +24,4 @@ public abstract @Data class EntidadeGenerica<Key> implements Serializable {
     @Column(name = "id", unique = true, nullable = false)
     @ApiModelProperty(value = "Id do Registro")
     private Key id;
-
-    @Version
-    private Long version;
 }

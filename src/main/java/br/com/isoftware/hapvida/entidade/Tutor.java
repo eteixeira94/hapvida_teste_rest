@@ -12,6 +12,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -47,6 +49,7 @@ public @Data class Tutor extends EntidadeGenerica<Integer> {
 	@JoinTable(name = "animal_has_tutor", joinColumns = {
 			@JoinColumn(name = "tutor_id", nullable = false, updatable = false) }, inverseJoinColumns = {
 					@JoinColumn(name = "animal_id", nullable = false, updatable = false) })
+	@JsonBackReference("animals-reference")
 	private Set<Animal> animals;
 
 }

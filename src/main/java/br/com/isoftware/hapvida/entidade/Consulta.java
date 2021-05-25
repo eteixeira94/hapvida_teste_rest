@@ -3,6 +3,7 @@ package br.com.isoftware.hapvida.entidade;
 import java.util.Date;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -14,6 +15,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
@@ -45,6 +47,7 @@ public @Data class Consulta extends EntidadeGenerica<Long> {
 	@ApiModelProperty(value = "Status da Consulta")
 	private StatusConsulta status;
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "consulta")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "consulta", orphanRemoval = true, cascade = CascadeType.ALL)
+	@JsonBackReference("consulta-itens-reference")
 	private Set<ConsultaHasAnimal> consultaHasAnimals;
 }

@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -31,14 +33,17 @@ public @Data class ConsultaHasAnimal implements java.io.Serializable {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "animal_id", nullable = false, insertable = false, updatable = false)
+	@JsonManagedReference("animals-consulta-reference")
 	private Animal animal;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "consulta_id", nullable = false, insertable = false, updatable = false)
+	@JsonManagedReference("consulta-itens-reference")
 	private Consulta consulta;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "veterinario_id", nullable = false, insertable = false, updatable = false)
+	@JsonManagedReference("veterinarios-consulta-reference")
 	private Veterinario veterinario;
 
 }

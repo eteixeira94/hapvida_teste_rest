@@ -18,6 +18,7 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
@@ -64,11 +65,13 @@ public @Data class Animal extends EntidadeGenerica<Integer> {
 	private Date dataNascimento;
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "animal")
+	@JsonBackReference("animals-consulta-reference")
 	private Set<ConsultaHasAnimal> consultaHasAnimals;
 
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "animal_has_tutor", joinColumns = {
 			@JoinColumn(name = "animal_id", nullable = false, updatable = false) }, inverseJoinColumns = {
 					@JoinColumn(name = "tutor_id", nullable = false, updatable = false) })
+	@JsonBackReference("tutors-reference")
 	private Set<Tutor> tutors;
 }
