@@ -3,9 +3,12 @@
 Projeto Teste para o Hapvida
 
 Requisitos:
-    - JDK 8
-    - Mysql
-    - Maven 3.6.3
+    * JDK 8
+    * Mysql
+    * Mysql Workbench 8.0
+    * Maven 3.6.3
+
+Script de Banco na pasta Raiz do projeto: database.sql
 
 Plataforma de Desenvolvimento:
     VS Code 1.56.2
