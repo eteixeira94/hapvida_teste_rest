@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import br.com.isoftware.hapvida.entidade.Animal;
-import br.com.isoftware.hapvida.entidade.enums.RacaoEnum;
+import br.com.isoftware.hapvida.entidade.enums.RacaEnum;
 import br.com.isoftware.hapvida.enums.Operacao;
 import lombok.SneakyThrows;
 
@@ -20,7 +20,7 @@ public class AnimalServicoTest extends GenericoServicoTest<Integer, Animal, Anim
             animal.setDataNascimento(new SimpleDateFormat("dd/MM/yyyy").parse("01/01/2021"));
             animal.setEspecie("CÃO");
             animal.setNome("Juju ".concat(operacao.name()));
-            animal.setRaca(RacaoEnum.PASTOR_ALEMAO);
+            animal.setRaca(RacaEnum.PASTOR_ALEMAO);
             return animal;
         }
 

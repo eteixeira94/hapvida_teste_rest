@@ -15,10 +15,7 @@ import br.com.isoftware.hapvida.entidade.Consulta;
 import br.com.isoftware.hapvida.entidade.ConsultaHasAnimal;
 import br.com.isoftware.hapvida.entidade.ConsultaHasAnimalId;
 import br.com.isoftware.hapvida.entidade.Veterinario;
-import br.com.isoftware.hapvida.entidade.enums.RacaoEnum;
-import br.com.isoftware.hapvida.servico.AnimalServico;
-import br.com.isoftware.hapvida.servico.ConsultaServico;
-import br.com.isoftware.hapvida.servico.VeterinarioServico;
+import br.com.isoftware.hapvida.entidade.enums.RacaEnum;
 import lombok.SneakyThrows;
 
 @SpringBootTest
@@ -64,7 +61,7 @@ public class ConsultaServicoTest {
         animal.setDataNascimento(new SimpleDateFormat("dd/MM/yyyy").parse("01/01/2021"));
         animal.setEspecie("CÃO");
         animal.setNome("Juju");
-        animal.setRaca(RacaoEnum.PASTOR_ALEMAO);
+        animal.setRaca(RacaEnum.PASTOR_ALEMAO);
 
         this.animalServico.salvar(animal);
 

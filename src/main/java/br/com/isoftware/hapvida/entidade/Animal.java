@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
-import br.com.isoftware.hapvida.entidade.enums.RacaoEnum;
+import br.com.isoftware.hapvida.entidade.enums.RacaEnum;
 import br.com.isoftware.hapvida.util.HapvidaDateDeserializer;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -54,7 +54,7 @@ public @Data class Animal extends EntidadeGenerica<Integer> {
 	@ApiModelProperty(value = "Raça do Animal")
 	@NotNull(message = "Raça é obrigatório.")
 	@NotBlank(message = "Raça não pode ser vazio.")
-	private RacaoEnum raca;
+	private RacaEnum raca;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "data_nascimento", nullable = false, length = 10)
